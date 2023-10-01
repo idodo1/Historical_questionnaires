@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>שאלונים על ההיסטוריה של היהודים</title>
+    <style>
+        body {
+            background-color: rgb(52, 54, 66);
+            color: wheat;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        .text-element {
+            text-align: right;
+        }
+        .question label {
+            font-size: 28px;
+        }
+
+        button {
+            margin-top: 15px;
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: gray;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        #welcome-message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        #countdown-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #countdown {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            display: none;
+        }
+
+        .question.active {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // טיימר להוצאת ההודעה הברכתית וההתחלתית
+            setTimeout(function () {
+                var welcomeMessage = document.getElementById('welcome-message');
+                if (welcomeMessage) {
+                    welcomeMessage.textContent = '';
+                    startCountdown();
+                }
+            }, 3000); 
+
+            var questions = document.getElementsByClassName('question');
+            var currentQuestion = 0;
+            var correct_answers = 0;
+            questions[currentQuestion].classList.add('active');
+
+            window.nextQuestion = function () {
+                var selectedAnswer = document.querySelector('input[name="q' + (currentQuestion + 1) + '"]:checked');
+
+                if (!selectedAnswer) {
+                    alert('נא לבחור תשובה.');
+                    return;
+                }
+
+                var isCorrect = selectedAnswer.value === 'a';
+
+                if (isCorrect) {
+                    correct_answers += 1;
+                }
+
+                questions[currentQuestion].classList.remove('active');
+                currentQuestion++;
+
+                if (currentQuestion >= questions.length) {
+                    alert('השאלון הסתיים! נכונות: ' + correct_answers + ' מתוך ' + questions.length);
+                } else {
+                    questions[currentQuestion].classList.add('active');
+                }
+            }
+
+           
+            function startCountdown() {
+                var countdownContainer = document.getElementById('countdown-container');
+                var countdown = document.getElementById('countdown');
+                countdownContainer.style.display = 'block';
+
+                var timeLeft = 3; 
+                var countdownInterval = setInterval(function () {
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                        countdownContainer.style.display = 'none';
+                    } else {
+                        countdown.textContent = 'השאלון מתחיל בעוד ' + timeLeft + ' שניות';
+                        timeLeft--;
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</head>
+<body>
+<bdi>
+    
+    <div id="quiz" class="text-element">
+        <h1>שאלונים על ההיסטוריה של היהודים</h1>
+
+        <div id="countdown-container">
+            <div id="countdown">השאלון מתחיל בעוד 3 שניות</div>
+            <div id="welcome-message">ברוכים הבאים למבחן על ההיסטוריה של היהודים - רמה קל מוכנים? בהצלחה!</div>
+            <div id="loading-circle"></div>
+        </div>
+
+        <div class="question">
+            <h2>מתי הייתה הכרזת העצמאות?</h2>
+            <input type="radio" id="q1a" name="q1" value="a">
+            <label for="q1a">1948</label><br>
+            <input type="radio" id="q1b" name="q1" value="b">
+            <label for="q1b">1950</label><br>
+            <input type="radio" id="q1c" name="q1" value="c">
+            <label for="q1c">1960</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>מי תפקידו של בינימיו נתניהו?</h2>
+            <input type="radio" id="q2a" name="q2" value="a">
+            <label for="q2a">ראש ממשלה</label><br>
+            <input type="radio" id="q2b" name="q2" value="b">
+            <label for="q2b">נשיא</label><br>
+            <input type="radio" id="q2c" name="q2" value="c">
+            <label for="q2c">שר החוץ</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>מי היה דוד בן גוריון?</h2>
+            <input type="radio" id="q3a" name="q3" value="a">
+            <label for="q3a">ראש הממשלה הראשון של מדינת ישראל</label><br>
+            <input type="radio" id="q3b" name="q3" value="b">
+            <label for="q3b">הנשיא הראשון של מדינת ישראל</label><br>
+            <input type="radio" id="q3c" name="q3" value="c">
+            <label for="q3c">ממנהיגי תנועת מרץ</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>מי היה יעקוב דורי?</h2>
+            <input type="radio" id="q4a" name="q4" value="b">
+            <label for="q4a">ראש הממשלה החמישי של מדינת ישראל</label><br>
+            <input type="radio" id="q4b" name="q4" value="a">
+            <label for="q4b">הרמטכל הראשון בצה"ל</label><br>
+            <input type="radio" id="q4c" name="q4" value="c">
+            <label for="q4c">עוזרו האישי של בינימין נתניהו</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>בת כמה מדינת ישראל היום?</h2>
+            <input type="radio" id="q2a" name="q5" value="c">
+            <label for="q5a">54</label><br>
+            <input type="radio" id="q5b" name="q5" value="b">
+            <label for="q5b">77</label><br>
+            <input type="radio" id="q5c" name="q5" value="a">
+            <label for="q5c">75</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>באיזה ספר היהודים מאמינים?</h2>
+            <input type="radio" id="q6a" name="q6" value="a">
+            <label for="q6a">תנ"ך</label><br>
+            <input type="radio" id="q6b" name="q6" value="b">
+            <label for="q6b">קוראן</label><br>
+            <input type="radio" id="q6c" name="q6" value="c">
+            <label for="q6c">ביבליה</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>מי היו שלושת הארגונים העיקריים לפני הקמת צה"ל?</h2>
+            <input type="radio" id="q7a" name="q7" value="c">
+            <label for="q7a">פלמח,בצל,צה"ל</label><br>
+            <input type="radio" id="q7b" name="q7" value="b">
+            <label for="q7b">פלמח,המגינים,האצל</label><br>
+            <input type="radio" id="q7c" name="q7" value="a">
+            <label for="q7c">פלמח,ההגנה,האצל</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>מהי העיר בירה של ישראל?</h2>
+            <input type="radio" id="q8a" name="q8" value="b">
+            <label for="q8a">אילת</label><br>
+            <input type="radio" id="q8b" name="q8" value="a">
+            <label for="q8b">ירושליים</label><br>
+            <input type="radio" id="q8c" name="q8" value="c">
+            <label for="q8c">תל אביב</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>כמה רשויות יש בישראל?</h2>
+            <input type="radio" id="q9a" name="q9" value="c">
+            <label for="q9a">15</label><br>
+            <input type="radio" id="q9b" name="q9" value="b">
+            <label for="q9b">1</label><br>
+            <input type="radio" id="q9c" name="q9" value="a">
+            <label for="q9c">3</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+        <div class="question">
+            <h2>האם יהודים מתפללים בבית כנסת?</h2>
+            <input type="radio" id="q10a" name="q10" value="a">
+            <label for="q10a">כן</label><br>
+            <input type="radio" id="q10b" name="q10" value="b">
+            <label for="q10b">כמעט</label><br>
+            <input type="radio" id="q10c" name="q10" value="c">
+            <label for="q10c">לא</label><br>
+            <button onclick="nextQuestion()">הבא</button>
+        </div>
+    </bdi>
+
+    </div>
+</body>
+</html>

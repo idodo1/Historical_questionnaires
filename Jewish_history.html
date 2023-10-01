@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ההיסטוריה של היהודים</title>
+    <style>
+        body {
+            background-color: rgb(52, 54, 66);
+            color: wheat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        h1, h2 {
+                    text-align: right;
+        }
+
+        .blue-line {
+           border-width: 6px;
+           border-style: solid;
+           border-color: wheat;
+           width: 100%;
+       }
+        .text-with-margin {
+            margin-top: 30px; 
+            font-size: 24px;
+            text-align: right;
+        }
+        .Easy_Jewish_history, .Normal_Jewish_history, .Jewish_history_difficult {
+            width: 400px;
+            height: 600px;
+            border-radius: 20px;
+            position: absolute;
+            top: 480px; 
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Easy_Jewish_history {
+            left: 1600px;
+        }
+
+        .Normal_Jewish_history {
+            left: 1000px;
+        }
+
+        .Jewish_history_difficult {
+            left: 400px;
+        }
+
+        .Easy_Jewish_history:hover + .Easy_Jewish_history_block,
+        .Normal_Jewish_history:hover + .Normal_Jewish_history_block,
+        .Jewish_history_difficult:hover + .Jewish_history_difficult_block,
+        .Easy_Jewish_history_block,
+        .Normal_Jewish_history_block,
+        .Jewish_history_difficult_block {
+            display: block;
+            position: absolute;
+            top: 900px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 370px;
+            height: 130px; 
+            margin-top: 30px; 
+            font-size: 38px;
+            text-align: center;
+            border: 6px solid blue;
+        }
+
+        .Easy_Jewish_history_block {
+            left: 1600px;
+        }
+
+        .Normal_Jewish_history_block {
+            left: 1000px;
+        }
+
+        .Jewish_history_difficult_block {
+            left: 400px;
+        }
+        
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <div>
+           <bdi>
+                <h1>שחזור היסטורי מרתק</h1>
+                <h2>בחרתם לשחק בשאלון על ההיסטוריה היהודית, מקווה שתצליחו!</h2>
+                <h2>עכשיו רק נשאר לבחור רמה, בהצלחה לכם!</h2>
+                <h2 class="text-with-margin">מוכנים להתנסות?!</h2>
+           </bdi>
+       </div>
+   </header>
+   <bdi>
+   <hr class="blue-line">
+
+   <a href="Jewish_history/Easy_Jewish_history.html">
+   <img class="Easy_Jewish_history" src="Photos/history_Jews/Easy_Jewish_history.jpeg" alt="הכרזת העצמאות-שלב קל.">
+   <div class="Easy_Jewish_history_block">ההיסטוריה של היהודים-רמה קלה.</div>
+    </a>
+
+    <a href="Jewish_history/medium_level_Jewish_history_questionnaire.html">
+   <img class="Normal_Jewish_history" src="Photos/history_Jews/Normal_Jewish_history.jpeg" alt="הכרזת העצמאות-שלב בינוני.">
+   <div class="Normal_Jewish_history_block">ההיסטוריה של היהודים-רמה בינונית.</div>
+    </a>
+
+    <a href="Jewish_history/Hard_level_Jewish_history.html">
+   <img class="Jewish_history_difficult" src="Photos/history_Jews/Jewish_history_difficult.jpg" alt="הכרזת העצמאות-שלב קשה.">
+   <div class="Jewish_history_difficult_block">ההיסטוריה של היהודים-רמה קשה.</div>
+   </bdi>
+    </a>
+    
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שחזור היסטורי</title>
+    <style>
+    body {
+        background-color: rgb(52, 54, 66);
+        color: wheat;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+        h1, h2 {
+            text-align: right;
+        }
+
+        .text-with-margin {
+            margin-top: 30px; 
+            font-size: 24px;
+            text-align: right;
+        }
+
+        .Jewish_history {
+            width: 400px;
+            height: 600px;
+            border-radius: 20px;
+            position: absolute;
+            top: 480px; 
+            left: 1700px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Jewish_history:hover + .hover-text {
+            display: block;
+        }
+
+        .hover-text {
+            display: none;
+            position: absolute;
+            top: 900px;
+            left: 1700px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 370px;
+            height: 130px; 
+            margin-top: 30px; 
+            font-size: 38px;
+            text-align: center;
+            border: 6px solid blue;
+        }
+
+        .world_history {
+            width: 400px;
+            height: 600px;
+            border-radius: 20px;
+            position: absolute;
+            top: 480px; 
+            left: 1200px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .world_history:hover + .world_history_hover_text {
+            display: block;
+        }
+
+        .world_history_hover_text {
+            display: none;
+            position: absolute;
+            top: 900px;
+            left: 1200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 370px;
+            height: 130px; 
+            margin-top: 30px; 
+            font-size: 38px;
+            text-align: center;
+            border: 6px solid blue;
+        }
+        
+        .Ministry_of_Education:hover + .Ministry_of_Education_text {
+            display: block;
+        }
+        .Ministry_of_Education {
+        width: 400px;
+        height: 600px; 
+        border-radius: 20px;
+        position: absolute;
+        top: 480px;
+        left: 700px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+
+        .Ministry_of_Education_text {
+            display: none;
+            position: absolute;
+            top: 900px;
+            left: 700px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 370px;
+            height: 130px; 
+            margin-top: 30px; 
+            font-size: 38px;
+            text-align: center;
+            border: 6px solid blue;
+        }
+        .History_integrated:hover + .History_integrated_text {
+            display: block;
+        }
+
+        .History_integrated {
+        width: 400px;
+        height: 600px; 
+        border-radius: 20px;
+        position: absolute;
+        top: 480px;
+        left: 200px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+
+        .History_integrated_text {
+            display: none;
+            position: absolute;
+            top: 900px;
+            left: 200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 370px;
+            height: 130px; 
+            margin-top: 30px; 
+            font-size: 38px;
+            text-align: center;
+            border: 6px solid blue;
+        }
+
+        .blue-line {
+           border-width: 6px;
+           border-style: solid;
+           border-color: wheat;
+           width: 100%;
+       }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+           <bdi>
+                <h1>שחזור היסטורי מרתק</h1>
+                <h2>ברוכים הבאים לאתר שיבדוק מה אתם יודעים על ההיסטוריה.</h2>
+                <h2>ההיסטוריה מאוד כללית, בגלל זה אתם יכולים לבחור את סוג השאלון שלכם.</h2>
+                <h2>יש ארבע סוגים של שאלונים:
+                    שאלון על ההיסטוריה של העם היהודי,
+                    שאלון על ההיסטוריה של העולם,
+                    שאלון על החומר לבגרות בהיסטוריה,
+                    והקשה ביותר הוא השאלון הכללי שישאל אותכם שאלות על הכול.</h2>
+                <h2 class="text-with-margin">מוכנים להתנסות?!</h2>
+           </bdi>
+       </div>
+   </header>
+
+   <hr class="blue-line">
+
+    <a href="Jewish_history.html">
+    <img class="Jewish_history" src="Photos/main/Jewish_history.jpeg" alt="ההיסטוריה של היהודים">
+    <div class="hover-text">ההיסטוריה של היהודים</div>
+    </a>
+
+    <a href="world_history.html">
+   <img class="world_history" src="Photos/main/world_history.jpeg" alt="ההיסטוריה של העולם">
+   <div class="world_history_hover_text">ההיסטוריה של העולם</div>
+    </a>
+    
+    <a href="History_material_matriculation.html">
+   <img class="Ministry_of_Education" src="Photos/main/Ministry_of_Education.jpeg" alt="ההיסטוריה של העולם">
+   <div class="Ministry_of_Education_text">ההיסטוריה-חומר לבגרות</div>
+    </a>
+
+   <img class="History_integrated" src="Photos/main/History_integrated.jpeg" alt="ההיסטוריה באופן כללי">
+   <div class="History_integrated_text">היסטוריה באופן כללי</div>
+
+</body>
+</html>
